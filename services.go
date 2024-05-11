@@ -26,6 +26,7 @@ func main() {
 
 	// Register the log middleware for all requests
 	gb.Use(logMiddleware)
+	gb.Use(unAuthorizedMiddleware)
 
 	// Define your handlers
 	gb.Get("/hello", func(ctx gearbox.Context) {
